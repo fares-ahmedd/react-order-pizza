@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Form, redirect, useActionData, useNavigation } from "react-router-dom";
 import { createOrder } from "../../services/apiRestaurant";
+import Button from "../../ui/Button";
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
@@ -38,20 +39,22 @@ function CreateOrder() {
   const formErrors = useActionData();
   const cart = fakeCart;
   return (
-    <div>
-      <h2>Ready to order? Let's go!</h2>
+    <div className="flex flex-1 flex-col items-center ">
+      <h2 className="mb-4 text-xl  font-bold sm:text-4xl">
+        Ready to order? Let's go!
+      </h2>
 
       {/* <Form method="POST" action="/order/new"> */}
-      <Form method="POST">
+      <Form method="POST" className="flex flex-col gap-2">
         <div>
-          <label>First Name</label>
-          <input type="text" name="customer" required />
+          <label className="block">First Name</label>
+          <input type="text" name="customer" required className="input" />
         </div>
 
         <div>
           <label>Phone number</label>
           <div>
-            <input type="tel" name="phone" required />{" "}
+            <input type="tel" name="phone" required className="input" />{" "}
             {formErrors?.phone && (
               <span style={{ color: "red", fontSize: "10px" }}>
                 {formErrors.phone}
@@ -63,29 +66,29 @@ function CreateOrder() {
         <div>
           <label>Address</label>
           <div>
-            <input type="text" name="address" required />
+            <input type="text" name="address" required className="input" />
           </div>
         </div>
 
-        <div>
+        <div className="flex flex-row-reverse gap-x-3 ">
           <input
             type="checkbox"
             name="priority"
             id="priority"
+            className="h-6 w-6 accent-yellow-400 focus:outline-none focus:ring focus:ring-yellow-400 focus:ring-offset-2 "
             // value={withPriority}
             // onChange={(e) => setWithPriority(e.target.checked)}
           />
-          <label htmlFor="priority">Want to yo give your order priority?</label>
+          <label htmlFor="priority" className="font-bold">
+            Want to yo give your order priority?
+          </label>
         </div>
 
-        <div>
+        <div className="text-end">
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
-          <button
-            disabled={isSubmitting}
-            className="bg-yellow-500 uppercase font-semibold text-stone-800 p-3 tracking-wide rounded-full hover:bg-yellow-400 transition-colors duration-300 focus:outline-none focus:ring focus:ring-yellow-300 focus:bg-yellow-300 focus:ring-offset-2 disabled:cursor-not-allowed"
-          >
+          <Button disabled={isSubmitting}>
             {isSubmitting ? "placing order" : "Order now"}
-          </button>
+          </Button>
         </div>
       </Form>
     </div>
