@@ -39,7 +39,7 @@ function CreateOrder() {
   const formErrors = useActionData();
   const cart = fakeCart;
   return (
-    <div className="flex flex-1 flex-col items-center ">
+    <div className="m-auto flex h-[100%] w-[90%] flex-1 flex-col items-center justify-center ">
       <h2 className="mb-4 text-xl  font-bold sm:text-4xl">
         Ready to order? Let's go!
       </h2>

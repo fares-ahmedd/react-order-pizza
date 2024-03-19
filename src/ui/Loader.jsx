@@ -1,6 +1,6 @@
 function Loader() {
   return (
-    <div class="main">
+    <div className="absolute inset-0 flex items-center justify-center  ">
       <svg
         width="168"
         height="158"
@@ -19,7 +19,7 @@ function Loader() {
                 d="M110 34.8997C118.513 39.4198 125.582 45.921 130.497 53.75C135.412 61.579 138 70.4598 138 79.5L82 79.5L110 34.8997Z"
                 fill="#FDDBA9"
                 stroke="#EE9758"
-                stroke-width="2"
+                strokeWidth="2"
                 mask="url(#path-1-inside-1_7_2)"
               ></path>
             </g>
@@ -59,7 +59,7 @@ function Loader() {
                 d="M54 34.8997C62.5131 30.3796 72.1699 28 82 28C91.8301 28 101.487 30.3796 110 34.8997L82 79.5L54 34.8997Z"
                 fill="#FDDBA9"
                 stroke="#EE9758"
-                stroke-width="2"
+                strokeWidth="2"
                 mask="url(#path-7-inside-2_7_2)"
               ></path>
             </g>
@@ -99,7 +99,7 @@ function Loader() {
                 d="M138 79.5C138 88.5401 135.412 97.421 130.497 105.25C125.582 113.079 118.513 119.58 110 124.1L82 79.5H138Z"
                 fill="#FDDBA9"
                 stroke="#EE9758"
-                stroke-width="2"
+                strokeWidth="2"
                 mask="url(#path-13-inside-3_7_2)"
               ></path>
             </g>
@@ -129,7 +129,7 @@ function Loader() {
                 d="M110 124.1C101.487 128.62 91.8301 131 82 131C72.1699 131 62.5131 128.62 54 124.1L82 79.5L110 124.1Z"
                 fill="#FDDBA9"
                 stroke="#EE9758"
-                stroke-width="2"
+                strokeWidth="2"
                 mask="url(#path-17-inside-4_7_2)"
               ></path>
             </g>
@@ -169,7 +169,7 @@ function Loader() {
                 d="M26 79.5C26 70.4599 28.5876 61.579 33.5026 53.75C38.4176 45.921 45.4869 39.4198 54 34.8997L82 79.5L26 79.5Z"
                 fill="#FDDBA9"
                 stroke="#EE9758"
-                stroke-width="2"
+                strokeWidth="2"
                 mask="url(#path-23-inside-5_7_2)"
               ></path>
             </g>
@@ -209,7 +209,7 @@ function Loader() {
                 d="M54 124.1C45.4869 119.58 38.4176 113.079 33.5026 105.25C28.5876 97.421 26 88.5401 26 79.5L82 79.5L54 124.1Z"
                 fill="#FDDBA9"
                 stroke="#EE9758"
-                stroke-width="2"
+                strokeWidth="2"
                 mask="url(#path-29-inside-6_7_2)"
               ></path>
             </g>

@@ -9,9 +9,8 @@ function AppLayout() {
   return (
     <div className="grid h-screen	grid-rows-[auto_1fr_auto]   ">
       <Header />
-      <main className="flex items-center justify-center overflow-auto">
-        {/* {isLoading ? <Loader /> : <Outlet />} */}
-        <Loader />
+      <main className="  overflow-auto">
+        {isLoading ? <Loader /> : <Outlet />}
       </main>
       <CartOverview />
     </div>

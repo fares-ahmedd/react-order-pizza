@@ -9,6 +9,7 @@
 }
 
 /* https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */
+/* loader */
 .main {
   display: flex;
   justify-content: center;
@@ -19,8 +20,8 @@
 #pizza {
   background-color: transparent;
   transform-origin: center center;
-  animation: rotate 45s linear infinite;
-  -webkit-animation: rotate 45s linear infinite;
+  animation: rotate 10s linear infinite;
+  -webkit-animation: rotate 10s linear infinite;
 }
 
 #slice1 {
@@ -178,3 +179,4 @@
     -o-transform: translate(5%, 0%);
   }
 }
+/* end loader */
