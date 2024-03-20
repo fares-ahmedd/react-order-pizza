@@ -1,7 +1,7 @@
-import { useState } from "react";
 import { Form, redirect, useActionData, useNavigation } from "react-router-dom";
 import { createOrder } from "../../services/apiRestaurant";
 import Button from "../../ui/Button";
+import { useSelector } from "react-redux";
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
@@ -35,28 +35,40 @@ const fakeCart = [
 
 function CreateOrder() {
   const isSubmitting = useNavigation().state === "submitting";
+  const userName = useSelector((state) => state.user.userName);
   // const [withPriority, setWithPriority] = useState(false);
   const formErrors = useActionData();
   const cart = fakeCart;
   return (
-    <div className="m-auto flex h-[100%] w-[90%] flex-1 flex-col items-center justify-center ">
-      <h2 className="mb-4 text-xl  font-bold sm:text-4xl">
+    <div className="m-auto flex h-[100%] w-[80%] flex-1 flex-col items-center justify-center ">
+      <h2 className="mb-4 text-xl font-bold sm:text-4xl">
         Ready to order? Let's go!
       </h2>
 
       {/* <Form method="POST" action="/order/new"> */}
-      <Form method="POST" className="flex flex-col gap-2">
+      <Form method="POST" className="flex w-full flex-col gap-2">
         <div>
           <label className="block">First Name</label>
-          <input type="text" name="customer" required className="input" />
+          <input
+            type="text"
+            name="customer"
+            required
+            className="input"
+            defaultValue={userName}
+          />
         </div>
 
         <div>
           <label>Phone number</label>
           <div>
-            <input type="tel" name="phone" required className="input" />{" "}
+            <input
+              type="tel"
+              name="phone"
+              required
+              className={`input ${formErrors?.phone ? "border-red-600" : ""}`}
+            />{" "}
             {formErrors?.phone && (
-              <span style={{ color: "red", fontSize: "10px" }}>
+              <span style={{ color: "red", fontSize: "16px" }}>
                 {formErrors.phone}
               </span>
             )}

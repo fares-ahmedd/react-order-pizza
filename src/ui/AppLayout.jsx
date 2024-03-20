@@ -5,11 +5,11 @@ import Loader from "./Loader";
 
 function AppLayout() {
   const isLoading = useNavigation().state === "loading";
-
+  console.log(isLoading);
   return (
     <div className="grid h-screen	grid-rows-[auto_1fr_auto]   ">
       <Header />
-      <main className="  overflow-auto">
+      <main className="overflow-auto ">
         {isLoading ? <Loader /> : <Outlet />}
       </main>
       <CartOverview />
