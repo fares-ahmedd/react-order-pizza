@@ -10,6 +10,8 @@ import {
 } from "./cartSlice";
 import EmptyCart from "./EmptyCart";
 import { formatCurrency } from "../../utils/helpers";
+import { useEffect, useState } from "react";
+import Loader from "../../ui/Loader";
 
 function Cart() {
   const cart = useSelector(getCart);
@@ -17,8 +19,17 @@ function Cart() {
   const dispatch = useDispatch();
   const totalPrice = useSelector(getTotalCartPrice);
   const totalAmount = useSelector(getTotalCartQuantity);
+  const [showLoader, setShowLoader] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setShowLoader(false);
+    }, 700);
+  }, []);
+
   if (!cart.length) return <EmptyCart />;
-  return (
+  return showLoader ? (
+    <Loader />
+  ) : (
     <div className="px-4 py-3 sm:px-6">
       <LinkButton to={"/menu"}>&larr; Back to menu</LinkButton>
 
