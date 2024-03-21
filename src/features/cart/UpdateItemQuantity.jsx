@@ -1,5 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import { getCurrentQuantityById } from "./cartSlice";
+import {
+  decreaseItemQuantity,
+  getCurrentQuantityById,
+  increaseItemQuantity,
+} from "./cartSlice";
 
 function UpdateItemQuantity({ pizzaId }) {
   const dispatch = useDispatch();
@@ -13,6 +17,7 @@ function UpdateItemQuantity({ pizzaId }) {
         className={`rounded bg-red-500 px-4 py-2 font-bold text-white hover:bg-red-700 disabled:bg-gray-500 `}
         title={`${!isInCart ? "press on order button to decrease" : ""}`}
         disabled={!isInCart}
+        onClick={() => dispatch(decreaseItemQuantity(pizzaId))}
       >
         -
       </button>
@@ -21,6 +26,7 @@ function UpdateItemQuantity({ pizzaId }) {
         className="rounded bg-green-500 px-4 py-2 font-bold text-white hover:bg-green-700 disabled:bg-gray-500"
         title={`${!isInCart ? "press on order button to increase" : ""}`}
         disabled={!isInCart}
+        onClick={() => dispatch(increaseItemQuantity(pizzaId))}
       >
         +
       </button>

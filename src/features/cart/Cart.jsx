@@ -2,7 +2,12 @@ import LinkButton from "../../ui/LinkButton";
 import Button from "../../ui/Button";
 import CartItem from "./CartItem";
 import { useDispatch, useSelector } from "react-redux";
-import { clearCart, getCart, getTotalCartPrice } from "./cartSlice";
+import {
+  clearCart,
+  getCart,
+  getTotalCartPrice,
+  getTotalCartQuantity,
+} from "./cartSlice";
 import EmptyCart from "./EmptyCart";
 import { formatCurrency } from "../../utils/helpers";
 
@@ -35,6 +40,7 @@ function Cart() {
   const userName = useSelector((state) => state.user.userName);
   const dispatch = useDispatch();
   const totalPrice = useSelector(getTotalCartPrice);
+  const totalAmount = useSelector(getTotalCartQuantity);
   if (!cart.length) return <EmptyCart />;
   return (
     <div className="px-4 py-3 sm:px-6">
@@ -49,6 +55,9 @@ function Cart() {
           <CartItem item={item} key={item.pizzaId} />
         ))}
       </ul>
+      <span className="block">
+        total pizzas : <strong>{totalAmount}</strong>
+      </span>
       <span>
         total price : <strong>{formatCurrency(totalPrice)}</strong>
       </span>
