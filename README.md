@@ -24,7 +24,7 @@ yarn dev
 </div>
 
 <div align="center">
-    <img src="https://github.com/fares-ahmedd/WorldWise-React-Router/assets/110955622/2eed564c-ddc6-4c11-9b6b-12880017c9d0" alt="GIFMaker_me" style="width: 100%;">
+    <img src="https://github.com/fares-ahmedd/react-order-pizza/assets/110955622/60f9effb-aefc-48c4-8e5c-6d13fc5b7a27" alt="GIFMaker_me" style="width: 100%;">
 </div>
 
 
